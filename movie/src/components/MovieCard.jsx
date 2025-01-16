@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 //map 메서드를 이용하여 영화 데이터를 MovieCard로  전달하세요.
+import { Link } from 'react-router-dom';
 
 
 const Card = styled.div`
@@ -37,12 +38,14 @@ export default function MovieCard ({ movie }) {
 
   return (
     <>
-
-        <Card>
-          <img src={imgUrl} alt="a" />
-          <div>{movie.title}</div>
-          <div>{vote_average}</div>
-        </Card>
+        <Link to='/detail'>
+          <Card>
+            <img src={imgUrl} alt="a" />
+            <div>{movie.title}</div>
+            <div>{vote_average}</div>
+          </Card>
+        </Link>
+        
 
     </>
   );

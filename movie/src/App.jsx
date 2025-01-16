@@ -5,6 +5,8 @@ import './App.scss'
 import MovieCard from './components/MovieCard.jsx'
 import Main from './pages/Main.jsx'
 import movieListData from '../public/data/movieListData.json'
+import Detail from './pages/Detail.jsx'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
 
 /*
@@ -27,8 +29,17 @@ function App() {
 
   return (
     <>
+    <main>
+      <Routes>
+        <Route path='/' element={<Main movies={movies} />}></Route>
+        <Route path='/detail' element={<Detail />}></Route>
+       {/* <Main movies={movies}></Main>
+       <Detail movies={movies}></Detail> */}
+      </Routes>
+    </main>
       
-     <Main movies={movies}></Main>
+     
+
 
     </>
   )
