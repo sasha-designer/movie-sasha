@@ -9,6 +9,7 @@ import Detail from './pages/Detail.jsx'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 
+
 /*
 1. **`MovieCard`** 컴포넌트를 생성합니다.
 2. **`App.jsx`** 파일에서 **`MovieCard`** 컴포넌트를 사용하여 영화 목록을 렌더링합니다.
@@ -29,12 +30,12 @@ function App() {
 
   return (
     <>
+    
+ 
     <main>
       <Routes>
         <Route path='/' element={<Main movies={movies} />}></Route>
         <Route path='/detail' element={<Detail />}></Route>
-       {/* <Main movies={movies}></Main>
-       <Detail movies={movies}></Detail> */}
       </Routes>
     </main>
       

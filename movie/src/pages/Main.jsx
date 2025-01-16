@@ -5,6 +5,7 @@ import movieDetailData from '../../public/data/movieDetailData.json'
 import styled from "styled-components"
 
 
+
 export default function Main({ movies }) {
     // const pokemonData = useSelector(state => state.pokemon.data)
 
@@ -19,6 +20,7 @@ export default function Main({ movies }) {
 
     return (
         <>
+
             {/* {pokemonData.map(el => <MovieCard key={el.id} pokemon={el} />)} */}
             <h1>영화 목록</h1>
 
