@@ -16,7 +16,8 @@ padding: 10px;
 img {
   width: 100%;
   flex-grow: 1;
-  /* height: 70%; */
+  height: 70%;
+  object-fit: cover;
 }
 
 div {
@@ -27,19 +28,20 @@ div {
 `
 
 
-
-const MovieCard = () => {
-
+export default function MovieCard ({ movie }) {
 
 
+  const { title, poster_path, vote_average } = movie;
+  const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
+  console.log(movie);
 
   return (
     <>
 
         <Card>
-          <img src="" alt="a" />
-          <div>제목</div>
-          <div>평점</div>
+          <img src={imgUrl} alt="a" />
+          <div>{movie.title}</div>
+          <div>{vote_average}</div>
         </Card>
 
     </>
@@ -49,4 +51,4 @@ const MovieCard = () => {
 
 
 
-export default MovieCard;
+

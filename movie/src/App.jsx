@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       
-     <Main></Main>
+     <Main movies={movies}></Main>
 
     </>
   )
