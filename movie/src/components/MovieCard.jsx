@@ -41,13 +41,13 @@ export default function MovieCard ({ movie }) {
 
   return (
     <>
-        {/* <Link to='/detail'> */}
+
           <Card onClick={() => navigate(`/detail`)}>
             <img src={imgUrl} alt="a" />
             <div>{movie.title}</div>
             <div>{vote_average}</div>
           </Card>
-        {/* </Link> */}
+
         
 
     </>

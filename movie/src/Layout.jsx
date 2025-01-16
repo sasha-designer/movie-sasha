@@ -3,11 +3,17 @@ import styled from 'styled-components'
 import NavBar from './components/NavBar';
 import { Outlet } from 'react-router-dom';
 
+const LayoutContainer = styled.div`
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+}
+`
 
 
-// const Card = styled.div`
-
-// `
 
 
 export default function Layout () {
@@ -15,8 +21,8 @@ export default function Layout () {
 
 
   return (
-    <>
-     <header style={{background: 'lightgray', padding: 16, fontSize: 24}}>
+    <LayoutContainer>
+     <header  >
         <NavBar />
       </header>
       <main>
@@ -24,7 +30,7 @@ export default function Layout () {
       </main>
 
 
-    </>
+    </LayoutContainer>
   );
 };
 
