@@ -4,6 +4,9 @@ import MovieDetail from "../components/MovieDetail"
 import movieDetailData from '../../public/data/movieDetailData.json'
 import styled from "styled-components"
 import Layout from '../Layout.jsx'
+import MovieSwiper from "../components/MovieSwiper.jsx"
+
+
 
 
 export default function Main({ movies }) {
@@ -21,14 +24,14 @@ export default function Main({ movies }) {
     return (
         <>
      
-            {/* {pokemonData.map(el => <MovieCard key={el.id} pokemon={el} />)} */}
             <h1>영화 목록</h1>
-
+          
+            <MovieSwiper></MovieSwiper>
             <MovieList>
                 {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
             </MovieList>
-            {/* <MovieCard></MovieCard> */}
+
+            
         </>
     )
 }
-
