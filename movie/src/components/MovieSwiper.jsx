@@ -1,47 +1,53 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import styled from 'styled-components'
+import { Swiper, SwiperSlide } from "swiper/react";
+import styled from "styled-components";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination } from "swiper/modules";
+import React from "react";
 
 const SwiperContainer = styled.div`
-    .swiper {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 300px;
-      height: 300px;
-    }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-    }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+`;
 
-`
+export default function MovieSwiper({ movies }) {
+  const [images, setImages] = React.useState([]);
 
+  React.useEffect(() => {
+    setImages(
+      movies.map((movie) => {
+        return `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+      })
+    );
+  }, [movies]);
 
-export default function MovieSwiper() {
-    // const pokemonData = useSelector(state => state.pokemon.data)
-
-
-    return (
-        <SwiperContainer>
-         <Swiper
-        effect={'coverflow'}
+  return (
+    <SwiperContainer>
+      <Swiper
+        effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'}
+        slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -53,35 +59,18 @@ export default function MovieSwiper() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+        </SwiperSlide> */}
+        {/* {images.map((image, index) => {
+          return <div key={index}>{image}</div>;
+        })} */}
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img src={image} />
+          </SwiperSlide>
+        ))}
       </Swiper>
-        </SwiperContainer>
-    )
+    </SwiperContainer>
+  );
 }
-
