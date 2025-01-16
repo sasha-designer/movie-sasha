@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 //map 메서드를 이용하여 영화 데이터를 MovieCard로  전달하세요.
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+// import { navigate } from 'hookrouter';
 
 
 const Card = styled.div`
@@ -36,15 +37,17 @@ export default function MovieCard ({ movie }) {
   const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
   console.log(movie);
 
+  const navigate = useNavigate()
+
   return (
     <>
-        <Link to='/detail'>
-          <Card>
+        {/* <Link to='/detail'> */}
+          <Card onClick={() => navigate(`/detail`)}>
             <img src={imgUrl} alt="a" />
             <div>{movie.title}</div>
             <div>{vote_average}</div>
           </Card>
-        </Link>
+        {/* </Link> */}
         
 
     </>
