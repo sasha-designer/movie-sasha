@@ -7,9 +7,15 @@ const MovieDetail = () => {
     const MovieDetailLayout = styled.div`
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         justify-content: center;
         gap: 10px;
+
+        img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+        }
         div {
             /* padding: 10px; */
             /* margin: 5px; */
@@ -35,9 +41,9 @@ const MovieDetail = () => {
     const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
   return (
     <MovieDetailLayout>
-      <div className='poster-area'>
+      {/* <div className='poster-area'> */}
         <img src={imgUrl} alt="a" />
-      </div>
+      {/* </div> */}
       <div className='info-area'>
         <div className='title'>
             <div>

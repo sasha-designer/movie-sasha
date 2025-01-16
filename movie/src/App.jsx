@@ -6,18 +6,8 @@ import MovieCard from './components/MovieCard.jsx'
 import Main from './pages/Main.jsx'
 import movieListData from '../public/data/movieListData.json'
 import Detail from './pages/Detail.jsx'
-import { Routes, Route, useNavigate } from 'react-router-dom'
-
-
-
-/*
-1. **`MovieCard`** 컴포넌트를 생성합니다.
-2. **`App.jsx`** 파일에서 **`MovieCard`** 컴포넌트를 사용하여 영화 목록을 렌더링합니다.
-    1. [map 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map)를 이용하여 영화 데이터를 **`MovieCard`**로  전달하세요.
-3. **`App.jsx`** 파일에서 **`movieListData.json`** 데이터를 import하여 상태로 관리합니다.
-4. **`MovieCard`** 컴포넌트는 필요한 데이터를 **`App.jsx`** 파일로 부터 전달받아 **포스터와 제목, 평점 정보**를 렌더링합니다.
-5. **`movieListData.json`** 의 길이만큼 화면에 **`MovieCard`**를 렌더링합니다.
-*/
+import { Routes, Route, useNavigate, BrowserRouter } from 'react-router-dom'
+import Layout from './Layout.jsx'
 
 
 
@@ -30,18 +20,12 @@ function App() {
 
   return (
     <>
-    
- 
-    <main>
       <Routes>
-        <Route path='/' element={<Main movies={movies} />}></Route>
-        <Route path='/detail' element={<Detail />}></Route>
-      </Routes>
-    </main>
-      
-     
-
-
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main movies={movies} />}></Route>
+          <Route path='/detail' element={<Detail />}></Route>
+        </Route>
+       </Routes>
     </>
   )
 }

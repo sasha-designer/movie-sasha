@@ -3,9 +3,10 @@ import styled from 'styled-components'
 
 
 
-// const Card = styled.div`
+const Header = styled.nav`
+height: 60px;
 
-// `
+`
 
 
 export default function NavBar () {
@@ -14,7 +15,9 @@ export default function NavBar () {
 
   return (
     <>
-        <h1>Navigation </h1>
+        <Header>
+            a    
+        </Header>
 
     </>
   );
