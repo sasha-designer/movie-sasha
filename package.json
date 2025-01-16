@@ -2,6 +2,7 @@
   "dependencies": {
     "react-router-dom": "^7.1.1",
     "sass": "^1.83.4",
-    "styled-components": "^6.1.14"
+    "styled-components": "^6.1.14",
+    "swiper": "^11.2.1"
   }
 }
