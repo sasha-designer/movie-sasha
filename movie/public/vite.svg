@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 -2 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    
+    <title>movie-recorder</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs>
+
+</defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-204.000000, -517.000000)" fill="#000000">
+            <path d="M234,543 L228,538 L228,535 L234,531 L234,543 L234,543 Z M223,529.012 C220.232,529.012 217.989,526.768 217.989,524 C217.989,521.232 220.232,518.989 223,518.989 C225.768,518.989 228.011,521.232 228.011,524 C228.011,526.768 225.768,529.012 223,529.012 L223,529.012 Z M226,541 C226,542.104 225.104,543 224,543 L208,543 C206.896,543 206,542.104 206,541 L206,533 C206,531.896 206.896,531 208,531 L224,531 C225.104,531 226,531.896 226,533 L226,541 L226,541 Z M206,525 C206,522.791 207.791,521 210,521 C212.209,521 214,522.791 214,525 C214,527.209 212.209,529 210,529 C207.791,529 206,527.209 206,525 L206,525 Z M234,529 L228,533 C228,531.786 227.448,530.712 226.594,529.979 C228.626,528.753 230,526.546 230,524 C230,520.134 226.866,517 223,517 C219.134,517 216,520.134 216,524 C216,525.962 216.812,527.729 218.111,529 L214.443,529 C215.4,527.937 216,526.544 216,525 C216,521.687 213.313,519 210,519 C206.687,519 204,521.687 204,525 C204,526.809 204.816,528.41 206.082,529.511 C204.847,530.191 204,531.49 204,533 L204,541 C204,543.209 205.791,545 208,545 L224,545 C226.209,545 228,543.209 228,541 L228,540 L234,545 C235.104,545 236,544.104 236,543 L236,531 C236,529.896 235.104,529 234,529 L234,529 Z" id="movie-recorder" sketch:type="MSShapeGroup">
+
+</path>
+        </g>
+    </g>
+</svg>
