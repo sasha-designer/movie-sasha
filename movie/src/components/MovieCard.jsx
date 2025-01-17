@@ -9,20 +9,30 @@ const Card = styled.div`
   flex-direction: column;
   width: 200px;
   height: 300px;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid #eee;
+  /* border-radius: 10px; */
   margin: 10px;
-  padding: 10px;
+  /* padding: 10px; */
 
   img {
     width: 100%;
     flex-grow: 1;
     height: 70%;
     object-fit: cover;
+    /* overflow: hidden; */
   }
 
-  div {
-    padding: 10px;
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding: 16px 8px 4px 8px;
+  }
+  .rating {
+    font-size: 14px;
+    text-align: left;
+    padding: 4px 8px 16px 8px;
+    color: #494949;
   }
 `;
 
@@ -36,8 +46,8 @@ export default function MovieCard({ movie }) {
     <>
       <Card onClick={() => navigate(`/detail`)}>
         <img src={imgUrl} alt="a" />
-        <div>{movie.title}</div>
-        <div>{vote_average}</div>
+        <div className="title">{movie.title}</div>
+        <div className="rating">평점: {vote_average}</div>
       </Card>
     </>
   );

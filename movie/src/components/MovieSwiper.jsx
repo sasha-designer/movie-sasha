@@ -13,8 +13,8 @@ import React from "react";
 const SwiperContainer = styled.div`
   .swiper {
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 16px;
+    padding-bottom: 200px;
   }
 
   .swiper-slide {

@@ -18,7 +18,7 @@ export default function Main({ movies }) {
 
   return (
     <>
-      <h1>영화 목록</h1>
+      {/* <h1>영화 목록</h1> */}
 
       <MovieSwiper movies={movies}></MovieSwiper>
       <MovieList>
