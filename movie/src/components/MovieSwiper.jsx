@@ -1,6 +1,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -41,6 +42,8 @@ export default function MovieSwiper({ movies }) {
     );
   }, [movies]);
 
+  const navigate = useNavigate();
+
   return (
     <SwiperContainer>
       <Swiper
@@ -66,7 +69,7 @@ export default function MovieSwiper({ movies }) {
           return <div key={index}>{image}</div>;
         })} */}
         {images.map((image, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} onClick={() => navigate(`/detail`)}>
             <img src={image} />
           </SwiperSlide>
         ))}
