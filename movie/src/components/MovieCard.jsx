@@ -36,18 +36,19 @@ const Card = styled.div`
   }
 `;
 
-export default function MovieCard({ movie }) {
-  const { title, poster_path, vote_average } = movie;
+export default function MovieCard({ moviee }) {
+  const { title, poster_path, vote_average } = moviee;
+  console.log("movie card moviee: ", moviee);
   const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
   const navigate = useNavigate();
 
   return (
     <>
-      <Card onClick={() => navigate(`/detail`)}>
+      <Card onClick={() => navigate(`/detail:${moviee.id}`)}>
         <img src={imgUrl} alt="a" />
-        <div className="title">{movie.title}</div>
-        <div className="rating">평점: {vote_average.toFixed(1)}</div>
+        <div className="title">{title}</div>
+        <div className="rating">평점: {vote_average}</div>
       </Card>
     </>
   );
