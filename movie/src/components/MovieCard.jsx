@@ -47,7 +47,7 @@ export default function MovieCard({ movie }) {
       <Card onClick={() => navigate(`/detail`)}>
         <img src={imgUrl} alt="a" />
         <div className="title">{movie.title}</div>
-        <div className="rating">평점: {vote_average}</div>
+        <div className="rating">평점: {vote_average.toFixed(1)}</div>
       </Card>
     </>
   );

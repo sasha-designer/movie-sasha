@@ -3,35 +3,33 @@ import movieDetailData from "../../public/data/movieDetailData.json";
 import styled from "styled-components";
 
 const MovieDetail = () => {
-  const MovieDetailLayout = styled.div`
+const MovieDetailLayout = styled.div`
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
     justify-content: center;
     gap: 10px;
+    padding: 32px 80px;
 
     img {
-      width: 200px;
-      height: 300px;
-      object-fit: cover;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
     }
     div {
-      /* padding: 10px; */
-      /* margin: 5px; */
-      border: 1px solid black;
+        border: 1px solid black;
     }
 
     .title {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .info-area {
-      padding: 0;
-      margin: 0;
+        padding: 0;
+        margin: 0;
     }
-  `;
+`;
 
   const movie = movieDetailData;
   console.log("movie detail:", movie);
