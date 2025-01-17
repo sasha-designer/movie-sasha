@@ -3,33 +3,40 @@ import movieDetailData from "../../public/data/movieDetailData.json";
 import styled from "styled-components";
 
 const MovieDetail = () => {
-const MovieDetailLayout = styled.div`
+  const MovieDetailLayout = styled.div`
     display: flex;
     flex-direction: row;
+    /* flex-wrap: wrap; */
     justify-content: center;
     gap: 10px;
     padding: 32px 80px;
 
     img {
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
     }
     div {
-        border: 1px solid black;
-    }
-
-    .title {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+      border: 1px solid black;
     }
 
     .info-area {
-        padding: 0;
-        margin: 0;
+      padding: 16px;
+      margin: 0;
     }
-`;
+
+    .title-area {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .title {
+        flex-grow: 1;
+        text-align: left;
+      }
+    }
+  `;
 
   const movie = movieDetailData;
   console.log("movie detail:", movie);
@@ -41,9 +48,9 @@ const MovieDetailLayout = styled.div`
       <img src={imgUrl} alt="a" />
       {/* </div> */}
       <div className="info-area">
-        <div className="title">
-          <div>{title}</div>
-          <div>{vote_average.toFixed(1)}</div>
+        <div className="title-area">
+          <div className="title">{title}</div>
+          <div className="rating">평점: {vote_average.toFixed(1)}</div>
         </div>
 
         <div>

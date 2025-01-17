@@ -6,6 +6,8 @@ import styled from "styled-components";
 import Layout from "../Layout.jsx";
 import MovieSwiper from "../components/MovieSwiper.jsx";
 
+
+
 export default function Main({ movies }) {
   // const pokemonData = useSelector(state => state.pokemon.data)
 
