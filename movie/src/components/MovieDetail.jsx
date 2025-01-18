@@ -11,7 +11,8 @@ const MovieDetail = ({ movie }) => {
     justify-content: center;
     gap: 10px;
     padding: 32px 80px;
-
+    background-color: black;
+    color: #ffffffa5;
     img {
       max-width: 100%;
       height: auto;
@@ -31,10 +32,15 @@ const MovieDetail = ({ movie }) => {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
 
       .title {
         flex-grow: 1;
         text-align: left;
+        color: #e3ad3f;
+        font-size: 24px;
+        font-weight: bold;
       }
     }
   `;
