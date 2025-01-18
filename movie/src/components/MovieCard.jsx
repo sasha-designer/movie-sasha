@@ -9,7 +9,7 @@ const Card = styled.div`
   flex-direction: column;
   width: 200px;
   height: 300px;
-  border: 1px solid #eee;
+  border: 1px solid #ffffff1f;
   /* border-radius: 10px; */
   margin: 10px;
   /* padding: 10px; */
@@ -27,12 +27,13 @@ const Card = styled.div`
     font-weight: bold;
     text-align: left;
     padding: 16px 8px 4px 8px;
+    color: #e3ad3f;
   }
   .rating {
     font-size: 14px;
     text-align: left;
     padding: 4px 8px 16px 8px;
-    color: #494949;
+    color: #ffffff;
   }
 `;
 
