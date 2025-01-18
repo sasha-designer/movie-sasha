@@ -1,13 +1,21 @@
+import { useParams } from "react-router-dom";
+import useReadMovie from "../hooks/useReadMovie";
+import React from "react";
 import MovieDetail from "../components/MovieDetail";
 
-export default function Detail({ movies }) {
-  // const pokemonData = useSelector(state => state.pokemon.data)
+export default function Detail() {
+  const { id } = useParams();
+
+  const { readMovie, movie, loading } = useReadMovie();
+
+  React.useEffect(() => {
+    readMovie(id);
+  }, [readMovie, id]);
 
   return (
     <>
-      {/* <h1>디테일페이지 </h1> */}
-
-      <MovieDetail></MovieDetail>
+      {loading && <div style={{ height: "100vh", width: "100vw" }}>로딩중</div>}
+      {movie && <MovieDetail movie={movie} />}
     </>
   );
 }

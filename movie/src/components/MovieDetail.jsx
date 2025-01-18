@@ -1,8 +1,9 @@
 import React from "react";
-import movieDetailData from "../../public/data/movieDetailData.json";
+// import movieDetailData from "../../public/data/movieDetailData.json";
 import styled from "styled-components";
+// import { useParams } from "react-router-dom";
 
-const MovieDetail = () => {
+const MovieDetail = ({ movie }) => {
   const MovieDetailLayout = styled.div`
     display: flex;
     flex-direction: row;
@@ -38,9 +39,12 @@ const MovieDetail = () => {
     }
   `;
 
-  const movie = movieDetailData;
+  // const moviees = moviee.find((movie) => movie.id === parseInt(useParams().id));
   console.log("movie detail:", movie);
   const { title, poster_path, vote_average, genres, overview } = movie;
+  // const { id } = useParams();
+  console.log("movie title:", title);
+
   const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
   return (
     <MovieDetailLayout>
@@ -50,14 +54,14 @@ const MovieDetail = () => {
       <div className="info-area">
         <div className="title-area">
           <div className="title">{title}</div>
-          <div className="rating">평점: {vote_average.toFixed(1)}</div>
+          <div className="rating">평점: {vote_average}</div>
         </div>
 
-        <div>
+        {/* <div>
           {genres.map((genre) => (
             <span key={genre.id}>{genre.name} </span>
           ))}
-        </div>
+        </div> */}
         <div>{overview}</div>
       </div>
     </MovieDetailLayout>
