@@ -12,6 +12,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import React from "react";
 
 const SwiperContainer = styled.div`
+  background-color: black;
   .swiper {
     width: 100%;
     padding-top: 16px;
@@ -62,14 +63,11 @@ export default function MovieSwiper({ movies }) {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {/* <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide> */}
-        {/* {images.map((image, index) => {
-          return <div key={index}>{image}</div>;
-        })} */}
         {images.map((image, index) => (
-          <SwiperSlide key={index} onClick={() => navigate(`/detail`)}>
+          <SwiperSlide
+            key={index}
+            onClick={() => navigate(`/detail/${movies[index].id}`)}
+          >
             <img src={image} />
           </SwiperSlide>
         ))}

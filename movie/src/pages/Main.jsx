@@ -1,30 +1,41 @@
-// import { useSelector } from "react-redux"
 import MovieCard from "../components/MovieCard";
-import MovieDetail from "../components/MovieDetail";
-import movieDetailData from "../../public/data/movieDetailData.json";
 import styled from "styled-components";
-import Layout from "../Layout.jsx";
-import MovieSwiper from "../components/MovieSwiper.jsx";
+import useReadPopularMovies from "../hooks/useReadPopularMovies";
+import useReadTopRatedMovies from "../hooks/useReadTopRatedMovies";
 
-export default function Main({ movies }) {
-  // const pokemonData = useSelector(state => state.pokemon.data)
+import React from "react";
+import MovieSwiper from "../components/MovieSwiper";
 
-  const MovieList = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  `;
+const MovieList = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+`;
+
+export default function Main() {
+  const { readPopularMovies, movies, loading, error } = useReadPopularMovies();
+  const { readTopRatedMovies, topMovies } = useReadTopRatedMovies();
+  console.log("Main -> movies", movies);
+  console.log("readTopRatedMovies", readTopRatedMovies);
+
+  React.useEffect(() => {
+    readPopularMovies();
+  }, [readPopularMovies]);
+  React.useEffect(() => {
+    readTopRatedMovies();
+  }, [readTopRatedMovies]);
 
   return (
     <>
-      {/* <h1>영화 목록</h1> */}
-
-      <MovieSwiper movies={movies}></MovieSwiper>
+      <MovieSwiper key={topMovies.id} movies={topMovies}></MovieSwiper>
       <MovieList>
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
+        {movies
+          .filter((movie) => !movie.adult)
+          .map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
       </MovieList>
     </>
   );
