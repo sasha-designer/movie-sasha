@@ -9,22 +9,28 @@ const MovieDetail = ({ movie }) => {
     flex-direction: row;
     /* flex-wrap: wrap; */
     justify-content: center;
+    /* align-items: center; */
+    justify-content: space-between;
     gap: 10px;
-    padding: 32px 80px;
+    padding: 16px;
+    /* padding: 32px 80px; */
     background-color: black;
     color: #ffffffa5;
+
     img {
-      max-width: 100%;
+      /* max-width: 100%; */
+      min-width: 40vw;
       height: auto;
-      object-fit: cover;
+      /* object-fit: cover; */
     }
     div {
       border: 1px solid black;
     }
 
     .info-area {
-      padding: 16px;
+      padding: 0 16px 16px 16px;
       margin: 0;
+      text-align: left;
     }
 
     .title-area {
@@ -33,15 +39,20 @@ const MovieDetail = ({ movie }) => {
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 0;
+      padding: 0 16px 0 0;
 
       .title {
-        flex-grow: 1;
-        text-align: left;
+        /* flex-grow: 1; */
+        /* text-align: left; */
         color: #e3ad3f;
         font-size: 24px;
         font-weight: bold;
       }
+    }
+
+    .genres {
+      text-align: left;
+      color: #65ddf5;
     }
   `;
 
@@ -55,7 +66,10 @@ const MovieDetail = ({ movie }) => {
   return (
     <MovieDetailLayout>
       {/* <div className='poster-area'> */}
-      <img src={imgUrl} alt="a" />
+      <div>
+        <img src={imgUrl} alt="a" />
+      </div>
+
       {/* </div> */}
       <div className="info-area">
         <div className="title-area">
@@ -63,7 +77,7 @@ const MovieDetail = ({ movie }) => {
           <div className="rating">평점: {vote_average}</div>
         </div>
 
-        <div>
+        <div className="genres">
           장르:
           {genres.map((genre) => (
             <span key={genre.id}>{genre.name} </span>
