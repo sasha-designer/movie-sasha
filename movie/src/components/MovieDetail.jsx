@@ -7,21 +7,35 @@ const MovieDetail = ({ movie }) => {
   const MovieDetailLayout = styled.div`
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    /* align-items: center; */
     justify-content: space-between;
     gap: 10px;
     padding: 16px;
-    /* padding: 32px 80px; */
     background-color: black;
     color: #ffffffa5;
+    position: relative;
 
-    img {
-      /* max-width: 100%; */
-      min-width: 40vw;
-      height: auto;
-      /* object-fit: cover; */
+    @media (max-width: 481px) {
+      flex-direction: column;
+      align-items: center;
+
+      .info-area {
+        position: absolute;
+        /* top: 50%;
+        left: 50%; */
+        bottom: 0;
+        /* left: 50%; */
+        /* transform: translate(-50%, -50%); */
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 16px;
+        border-radius: 8px;
+      }
+    }
+
+    .poster-area {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     }
     div {
       border: 1px solid black;
@@ -42,8 +56,6 @@ const MovieDetail = ({ movie }) => {
       padding: 0 16px 0 0;
 
       .title {
-        /* flex-grow: 1; */
-        /* text-align: left; */
         color: #e3ad3f;
         font-size: 24px;
         font-weight: bold;
@@ -66,7 +78,7 @@ const MovieDetail = ({ movie }) => {
   return (
     <MovieDetailLayout>
       {/* <div className='poster-area'> */}
-      <div>
+      <div className="poster-area">
         <img src={imgUrl} alt="a" />
       </div>
 
