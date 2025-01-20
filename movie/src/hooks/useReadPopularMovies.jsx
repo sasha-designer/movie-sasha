@@ -21,6 +21,7 @@ export default function useReadPopularMovies() {
       headers: {
         accept: "application/json",
         Authorization: `Bearer ${APIKEY}`,
+        "Content-Type": "application/json;charset=utf-8",
       },
     };
 
