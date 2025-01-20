@@ -63,11 +63,12 @@ const MovieDetail = ({ movie }) => {
           <div className="rating">평점: {vote_average}</div>
         </div>
 
-        {/* <div>
+        <div>
+          장르:
           {genres.map((genre) => (
             <span key={genre.id}>{genre.name} </span>
           ))}
-        </div> */}
+        </div>
         <div>{overview}</div>
       </div>
     </MovieDetailLayout>
