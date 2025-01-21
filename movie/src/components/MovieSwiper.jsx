@@ -33,6 +33,7 @@ const SwiperContainer = styled.div`
 `;
 
 export default function MovieSwiper({ movies }) {
+  console.log("MoiveSwiper.jsx 실행");
   const [images, setImages] = React.useState([]);
 
   React.useEffect(() => {

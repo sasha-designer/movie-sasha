@@ -7,6 +7,7 @@ const APIKEY = import.meta.env.VITE_TMDB_API_KEY;
  * @returns {Object} - readPopularMovies 함수를 반환
  */
 export default function useReadTopRatedMovies() {
+  console.log("useReadTopMovies.jsx 실행");
   const [loading, setLoading] = React.useState(false);
   const [topMovies, setTopMovies] = React.useState([]);
   const [error, setError] = React.useState(null);

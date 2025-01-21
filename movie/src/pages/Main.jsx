@@ -15,16 +15,20 @@ const MovieList = styled.div`
 `;
 
 export default function Main() {
-  const { readPopularMovies, movies, loading, error } = useReadPopularMovies();
+  console.log("******Main.jsx*********");
+  const { readPopularMovies, movies } = useReadPopularMovies();
   const { readTopRatedMovies, topMovies } = useReadTopRatedMovies();
   console.log("******api호출함수*********", useReadPopularMovies());
 
   React.useEffect(() => {
     readPopularMovies();
-  }, [readPopularMovies]);
+    console.log("******파퓰러 useEffect 호출함수*********");
+  }, []);
   React.useEffect(() => {
     readTopRatedMovies();
+    console.log("******탑!!!!! useEffect 호출함수*********");
   }, [readTopRatedMovies]);
+  console.log("******파퓰러 movies*********", movies);
 
   return (
     <>

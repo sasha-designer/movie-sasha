@@ -5,6 +5,7 @@ import MovieDetail from "../components/MovieDetail";
 // import useReadGenres from "../hooks/useReadGenres";
 
 export default function Detail() {
+  console.log("Detail.jsx 실행");
   const { id } = useParams();
 
   const { readMovie, movie, loading, genres } = useReadMovie();

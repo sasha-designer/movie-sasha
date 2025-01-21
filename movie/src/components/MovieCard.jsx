@@ -38,6 +38,7 @@ const Card = styled.div`
 `;
 
 export default function MovieCard({ movie }) {
+  console.log("MovieCard.jsx 실행");
   const { title, poster_path, vote_average } = movie;
 
   // console.log("movie card moviee: ", movie);

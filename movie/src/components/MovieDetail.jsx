@@ -4,6 +4,7 @@ import styled from "styled-components";
 // import { useParams } from "react-router-dom";
 
 const MovieDetail = ({ movie }) => {
+  console.log("MoiveDetail.jsx 실행");
   const MovieDetailLayout = styled.div`
     display: flex;
     flex-direction: row;
