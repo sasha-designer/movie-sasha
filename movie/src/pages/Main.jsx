@@ -16,7 +16,7 @@ const MovieList = styled.div`
 
 export default function Main() {
   console.log("******Main.jsx*********");
-  const { readPopularMovies, movies, loading, error } = useReadPopularMovies();
+  const { readPopularMovies, movies } = useReadPopularMovies();
   const { readTopRatedMovies, topMovies } = useReadTopRatedMovies();
   console.log("******api호출함수*********", useReadPopularMovies());
 

@@ -2,10 +2,6 @@ import axios from "axios";
 import React from "react";
 const APIKEY = import.meta.env.VITE_TMDB_API_KEY;
 
-/**
- * 인기 영화 리스트를 조회하는 함수
- * @returns {Object} - searchMovies 함수를 반환
- */
 export default function useSearchMovies(searchKeyword) {
   console.log("useSearchMovies.jsx 실행");
   console.log("usesearch 안에 있는 searchKeyword: ", searchKeyword);
@@ -30,7 +26,7 @@ export default function useSearchMovies(searchKeyword) {
       params: {
         query: searchKeyword,
         include_adult: "false",
-        language: "en-US",
+        language: "ko-KR",
         page: "1",
       },
       headers: {
@@ -49,10 +45,9 @@ export default function useSearchMovies(searchKeyword) {
 
   return {
     searchMovies,
-    searchKeyword,
+    searchedMovies,
     loading,
     setLoading,
-    searchedMovies,
     error,
   };
 }

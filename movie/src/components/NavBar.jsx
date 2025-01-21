@@ -4,9 +4,11 @@ import styled from "styled-components";
 import { useDebounce } from "../hooks/useDebounce";
 import useSearchMovies from "../hooks/useSearchMovies";
 import { use } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = styled.nav`
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   align-items: center;
@@ -34,30 +36,34 @@ const Header = styled.nav`
 // Nav-bar에 검색 입력 필드를 추가하고, 입력된 검색어를 상태로 관리합니다.
 export default function NavBar() {
   console.log("NavBar.jsx 실행");
-
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const debounceSearch = useDebounce(search);
+
+  const { searchedMovies } = useSearchMovies(debounceSearch);
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
-  const {
-    searchMovies,
+  useEffect(() => {
+    if (debounceSearch) {
+      navigate(`/search/${debounceSearch}`);
+    }
+  }, [debounceSearch]);
 
-    searchedMovies,
-  } = useSearchMovies();
-
-  useSearchMovies();
+  // useSearchMovies();
   console.log("searchMovies: ", useSearchMovies);
 
   console.log("debounceSearch: ", debounceSearch);
-  console.log("검색한 결과: ", useSearchMovies(debounceSearch));
+  console.log("검색한 결과: ", searchedMovies);
   console.log("search: ", search);
 
   return (
     <>
       <Header>
-        <span>Movie</span>
+        <Link to="/">
+          <span>Movie</span>
+        </Link>
         <input type="text" onChange={handleChange} />
         <button>로그인</button>
         <button>회원가입</button>
