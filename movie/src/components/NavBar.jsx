@@ -1,5 +1,6 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { useDebounce } from "../hooks/useDebounce";
 
 const Header = styled.nav`
   width: 100%;
@@ -27,14 +28,23 @@ const Header = styled.nav`
     padding-left: 16px;
   }
 `;
-
+// Nav-bar에 검색 입력 필드를 추가하고, 입력된 검색어를 상태로 관리합니다.
 export default function NavBar() {
   console.log("NavBar.jsx 실행");
+
+  const [search, setSearch] = useState("");
+  const debounceSearch = useDebounce(search);
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  console.log("search: ", search);
+
   return (
     <>
       <Header>
         <span>Movie</span>
-        <input type="text" />
+        <input type="text" onChange={handleChange} />
         <button>로그인</button>
         <button>회원가입</button>
       </Header>
