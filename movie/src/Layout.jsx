@@ -14,6 +14,7 @@ const LayoutContainer = styled.div`
 `;
 
 export default function Layout() {
+  console.log("Layout.jsx 실행");
   return (
     <LayoutContainer>
       <header>

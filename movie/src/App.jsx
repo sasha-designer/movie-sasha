@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout.jsx";
 
 function App() {
-  // console.log("movie list:", movies);
+  console.log("App.jsx 실행");
   return (
     <>
       <Routes>

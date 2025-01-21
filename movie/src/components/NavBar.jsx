@@ -29,6 +29,7 @@ const Header = styled.nav`
 `;
 
 export default function NavBar() {
+  console.log("NavBar.jsx 실행");
   return (
     <>
       <Header>
