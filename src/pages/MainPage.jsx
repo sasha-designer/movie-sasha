@@ -14,7 +14,7 @@ const MovieList = styled.div`
   background-color: black;
 `;
 
-export default function Main() {
+export default function MainPage() {
   console.log("******Main.jsx*********");
   const { readPopularMovies, movies } = useReadPopularMovies();
   const { readTopRatedMovies, topMovies } = useReadTopRatedMovies();

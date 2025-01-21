@@ -4,7 +4,7 @@ import React from "react";
 import MovieDetail from "../components/MovieDetail";
 // import useReadGenres from "../hooks/useReadGenres";
 
-export default function Detail() {
+export default function DetailPage() {
   console.log("Detail.jsx 실행");
   const { id } = useParams();
 
