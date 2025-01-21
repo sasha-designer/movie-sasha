@@ -1,6 +1,9 @@
-import { useState } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDebounce } from "../hooks/useDebounce";
+import useSearchMovies from "../hooks/useSearchMovies";
+import { use } from "react";
 
 const Header = styled.nav`
   width: 100%;
@@ -38,6 +41,17 @@ export default function NavBar() {
     setSearch(e.target.value);
   };
 
+  const {
+    searchMovies,
+
+    searchedMovies,
+  } = useSearchMovies();
+
+  useSearchMovies();
+  console.log("searchMovies: ", useSearchMovies);
+
+  console.log("debounceSearch: ", debounceSearch);
+  console.log("검색한 결과: ", useSearchMovies(debounceSearch));
   console.log("search: ", search);
 
   return (
