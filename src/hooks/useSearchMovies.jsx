@@ -2,22 +2,17 @@ import axios from "axios";
 import React from "react";
 const APIKEY = import.meta.env.VITE_TMDB_API_KEY;
 
-export default function useSearchMovies(searchKeyword) {
+export default function useSearchMovies() {
   console.log("useSearchMovies.jsx 실행");
-  console.log("usesearch 안에 있는 searchKeyword: ", searchKeyword);
   const [searchedMovies, setSearchedMovies] = React.useState([]);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
-  React.useEffect(() => {
-    if (searchKeyword) {
-      searchMovies();
-    }
-  }, [searchKeyword]);
-
-  const searchMovies = React.useCallback(async () => {
+  const searchMovies = React.useCallback(async (searchKeyword) => {
     setLoading(true);
     console.log("searchKeyword222: ", searchKeyword);
+
+    setSearchedMovies([]);
 
     console.log("searchMovies 실행");
     const options = {
@@ -41,7 +36,7 @@ export default function useSearchMovies(searchKeyword) {
       .then((res) => setSearchedMovies(res.data.results))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
-  }, [searchKeyword]);
+  }, []);
 
   return {
     searchMovies,

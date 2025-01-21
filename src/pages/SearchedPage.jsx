@@ -16,17 +16,16 @@ const MovieList = styled.div`
   background-color: black;
 `;
 
-export default function Searched() {
+export default function SearchedPage() {
   console.log("Searched.jsx 실행");
   const { search } = useParams();
-  const { searchedMovies } = useSearchMovies(search);
+  const { searchedMovies, searchMovies } = useSearchMovies();
 
-  const { readMovie, movie, loading, genres } = useReadMovie();
-  // const { genres } = useReadGenres();
+  React.useEffect(() => {
+    if (!search) return;
 
-  //   React.useEffect(() => {
-  //     readMovie(id);
-  //   }, [readMovie, id]);
+    searchMovies(search);
+  }, [search]);
 
   return (
     <>

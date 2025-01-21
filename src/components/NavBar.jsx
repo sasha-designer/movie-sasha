@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDebounce } from "../hooks/useDebounce";
 import useSearchMovies from "../hooks/useSearchMovies";
-import { use } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -40,7 +39,6 @@ export default function NavBar() {
   const [search, setSearch] = useState("");
   const debounceSearch = useDebounce(search);
 
-  const { searchedMovies } = useSearchMovies(debounceSearch);
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
@@ -51,12 +49,14 @@ export default function NavBar() {
     }
   }, [debounceSearch]);
 
-  // useSearchMovies();
-  console.log("searchMovies: ", useSearchMovies);
-
   console.log("debounceSearch: ", debounceSearch);
-  console.log("검색한 결과: ", searchedMovies);
   console.log("search: ", search);
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      navigate(`/search/${search}`);
+    }
+  };
 
   return (
     <>
@@ -64,7 +64,11 @@ export default function NavBar() {
         <Link to="/">
           <span>Movie</span>
         </Link>
-        <input type="text" onChange={handleChange} />
+        <input
+          type="text"
+          onChange={handleChange}
+          onKeyPress={handleKeyPress}
+        />
         <button>로그인</button>
         <button>회원가입</button>
       </Header>
