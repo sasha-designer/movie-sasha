@@ -28,6 +28,7 @@ export default function Main() {
     readTopRatedMovies();
     console.log("******탑!!!!! useEffect 호출함수*********");
   }, [readTopRatedMovies]);
+  console.log("******파퓰러 movies*********", movies);
 
   return (
     <>
