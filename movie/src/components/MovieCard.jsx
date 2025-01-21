@@ -40,7 +40,7 @@ const Card = styled.div`
 export default function MovieCard({ movie }) {
   const { title, poster_path, vote_average } = movie;
 
-  console.log("movie card moviee: ", movie);
+  // console.log("movie card moviee: ", movie);
   const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
   const navigate = useNavigate();

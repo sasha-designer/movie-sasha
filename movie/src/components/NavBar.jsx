@@ -1,14 +1,11 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.nav`
   width: 100%;
   height: 100%;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
-  /* padding: 20px 10px; */
   gap: 8px;
 
   input {
@@ -22,15 +19,20 @@ const Header = styled.nav`
     align-items: center;
     font-size: 12px;
   }
-`;
 
-// const navigate = useNavigate();
+  span {
+    min-width: 30px;
+    color: white;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+`;
 
 export default function NavBar() {
   return (
     <>
       <Header>
-        <span>🎬</span>
+        <span>Movie</span>
         <input type="text" />
         <button>로그인</button>
         <button>회원가입</button>

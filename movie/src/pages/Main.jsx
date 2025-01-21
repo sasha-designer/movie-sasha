@@ -17,8 +17,7 @@ const MovieList = styled.div`
 export default function Main() {
   const { readPopularMovies, movies, loading, error } = useReadPopularMovies();
   const { readTopRatedMovies, topMovies } = useReadTopRatedMovies();
-  console.log("Main -> movies", movies);
-  console.log("readTopRatedMovies", readTopRatedMovies);
+  console.log("******api호출함수*********", useReadPopularMovies());
 
   React.useEffect(() => {
     readPopularMovies();
