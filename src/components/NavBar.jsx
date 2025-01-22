@@ -69,8 +69,8 @@ export default function NavBar() {
           onChange={handleChange}
           onKeyPress={handleKeyPress}
         />
-        <button>로그인</button>
-        <button>회원가입</button>
+        <button onClick={() => navigate("login")}>로그인</button>
+        <button onClick={() => navigate("sign-up")}>회원가입</button>
       </Header>
     </>
   );

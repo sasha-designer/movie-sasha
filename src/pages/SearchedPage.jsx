@@ -14,6 +14,8 @@ const MovieList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   background-color: black;
+  min-height: 100vh;
+  height: 100%;
 `;
 
 export default function SearchedPage() {
@@ -31,7 +33,12 @@ export default function SearchedPage() {
     <>
       <MovieList>
         <div
-          style={{ display: "flex", justifyContent: "center", width: "100%" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+            height: "100px",
+          }}
         >
           <h1>Your Keyword: {search}</h1>
         </div>

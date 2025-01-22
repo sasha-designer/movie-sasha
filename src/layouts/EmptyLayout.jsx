@@ -8,7 +8,7 @@ export default function EmptyLayout() {
   return (
     <>
       <header></header>
-      <main>
+      <main style={{ height: "100vh" }}>
         <Outlet />
       </main>
     </>
