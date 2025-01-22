@@ -19,7 +19,7 @@ export default function DetailPage() {
     <div style={{ backgroundColor: "black", width: "100vw", height: "100vh" }}>
       {loading && <div style={{ height: "100vh", width: "100vw" }}>로딩중</div>}
       {movie && <MovieDetail movie={movie} />}
-      <h1>{genres}</h1>
+      {/* <h1>{genres}</h1> */}
     </div>
   );
 }

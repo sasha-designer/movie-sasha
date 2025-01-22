@@ -8,14 +8,14 @@ const MovieDetail = ({ movie }) => {
   const MovieDetailLayout = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
     padding: 16px;
     background-color: black;
     color: #ffffffa5;
     position: relative;
 
-    @media (max-width: 481px) {
+    @media (max-width: 600px) {
       flex-direction: column;
       align-items: center;
 
