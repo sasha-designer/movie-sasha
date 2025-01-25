@@ -11,7 +11,7 @@ const MovieList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: black;
+  background-color: ${(props) => props.theme.background};
 `;
 
 export default function MainPage() {

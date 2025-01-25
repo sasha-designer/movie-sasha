@@ -12,7 +12,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import React from "react";
 
 const SwiperContainer = styled.div`
-  background-color: black;
+  background-color: ${(props) => props.theme.background};
   .swiper {
     width: 100%;
     padding-top: 16px;

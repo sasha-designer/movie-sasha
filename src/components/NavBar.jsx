@@ -27,13 +27,13 @@ const Header = styled.nav`
 
   span {
     min-width: 30px;
-    color: white;
+    color: ${(props) => props.theme.color};
     padding-right: 16px;
     padding-left: 16px;
   }
 `;
 // Nav-bar에 검색 입력 필드를 추가하고, 입력된 검색어를 상태로 관리합니다.
-export default function NavBar() {
+export default function NavBar({ theme, setTheme }) {
   console.log("NavBar.jsx 실행");
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
@@ -58,6 +58,11 @@ export default function NavBar() {
     }
   };
 
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    console.log("theme: ", theme);
+  };
+
   return (
     <>
       <Header>
@@ -69,6 +74,9 @@ export default function NavBar() {
           onChange={handleChange}
           onKeyPress={handleKeyPress}
         />
+        <button onClick={toggleTheme}>
+          Switch to {theme === "light" ? "Dark" : "Light"} Mode
+        </button>
         <button onClick={() => navigate("login")}>로그인</button>
         <button onClick={() => navigate("sign-up")}>회원가입</button>
       </Header>

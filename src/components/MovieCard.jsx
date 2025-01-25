@@ -5,14 +5,16 @@ import { useNavigate } from "react-router-dom";
 // import { navigate } from 'hookrouter';
 
 const Card = styled.div`
+  background-color: ${(props) => props.theme.background};
   display: flex;
   flex-direction: column;
   width: 200px;
   height: 300px;
-  border: 1px solid #ffffff1f;
+  border: 1px solid ${(props) => props.theme.borderColor};
   /* border-radius: 10px; */
   margin: 10px;
   /* padding: 10px; */
+  color: ${(props) => props.theme.color};
 
   &:hover {
     transform: scale(1.05);
@@ -34,13 +36,13 @@ const Card = styled.div`
     font-weight: bold;
     text-align: left;
     padding: 16px 8px 4px 8px;
-    color: #e3ad3f;
+    color: ${(props) => props.theme.mainColor};
   }
   .rating {
     font-size: 14px;
     text-align: left;
     padding: 4px 8px 16px 8px;
-    color: #ffffff;
+    color: ${(props) => props.theme.color};
   }
 `;
 

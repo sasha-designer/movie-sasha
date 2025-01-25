@@ -11,8 +11,8 @@ const MovieDetail = ({ movie }) => {
     justify-content: center;
     gap: 10px;
     padding: 16px;
-    background-color: black;
-    color: #ffffffa5;
+    background-color: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.color};
     position: relative;
 
     @media (max-width: 600px) {
@@ -26,7 +26,7 @@ const MovieDetail = ({ movie }) => {
         bottom: 0;
         /* left: 50%; */
         /* transform: translate(-50%, -50%); */
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: ${(props) => props.theme.background};
         padding: 16px;
         border-radius: 8px;
       }
@@ -39,7 +39,7 @@ const MovieDetail = ({ movie }) => {
       }
     }
     div {
-      border: 1px solid black;
+      border: none;
     }
 
     .info-area {
