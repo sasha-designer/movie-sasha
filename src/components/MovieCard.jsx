@@ -14,6 +14,13 @@ const Card = styled.div`
   margin: 10px;
   /* padding: 10px; */
 
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
   img {
     width: 100%;
     flex-grow: 1;

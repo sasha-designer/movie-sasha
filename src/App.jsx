@@ -12,6 +12,7 @@ function App() {
   console.log("App.jsx 실행");
   return (
     <>
+      <ThemeProvider></ThemeProvider>
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<MainPage />}></Route>
