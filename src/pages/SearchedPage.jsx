@@ -13,7 +13,6 @@ const MovieList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: black;
   min-height: 100vh;
   height: 100%;
 `;

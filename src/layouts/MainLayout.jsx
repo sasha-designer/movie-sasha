@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const LayoutContainer = styled.div`
   height: 100vh;
+  width: 100vw;
   background-color: ${(props) => props.theme.background};
   header {
     height: 60px;

@@ -7,28 +7,31 @@ import { Link, useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Keyboard, Pagination, Navigation } from "swiper/modules";
 import React from "react";
 
 const SwiperContainer = styled.div`
   background-color: ${(props) => props.theme.background};
   .swiper {
     width: 100%;
-    padding-top: 16px;
-    padding-bottom: 200px;
+    height: 100%;
   }
 
   .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .swiper-slide img {
-    display: block;
-    width: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -39,7 +42,7 @@ export default function MovieSwiper({ movies }) {
   React.useEffect(() => {
     setImages(
       movies.map((movie) => {
-        return `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        return `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`;
       })
     );
   }, [movies]);
@@ -47,32 +50,29 @@ export default function MovieSwiper({ movies }) {
   const navigate = useNavigate();
 
   return (
-    <SwiperContainer>
-      <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-      >
-        {images.map((image, index) => (
-          <SwiperSlide
-            key={index}
-            onClick={() => navigate(`/detail/${movies[index].id}`)}
-          >
-            <img src={image} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </SwiperContainer>
+    // <SwiperContainer>
+    <Swiper
+      slidesPerView={1}
+      spaceBetween={30}
+      keyboard={{
+        enabled: true,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Keyboard, Pagination, Navigation]}
+      className="mySwiper"
+    >
+      {images.map((image, index) => (
+        <SwiperSlide
+          key={index}
+          onClick={() => navigate(`/detail/${movies[index].id}`)}
+        >
+          <img src={image} style={{ width: "100%" }} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    // </SwiperContainer>
   );
 }

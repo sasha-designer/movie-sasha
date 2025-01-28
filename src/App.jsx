@@ -29,9 +29,6 @@ function App() {
       {/* <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <StyledThemeProvider></StyledThemeProvider> */}
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        <button onClick={toggleTheme}>
-          Switch to {theme === "light" ? "Dark" : "Light"} Mode
-        </button>
         <Routes>
           <Route element={<MainLayout theme={theme} setTheme={setTheme} />}>
             <Route index element={<MainPage />}></Route>

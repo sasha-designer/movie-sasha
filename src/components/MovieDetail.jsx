@@ -78,18 +78,14 @@ const MovieDetail = ({ movie }) => {
   const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
   return (
     <MovieDetailLayout>
-      {/* <div className='poster-area'> */}
       <div className="poster-area">
         <img src={imgUrl} alt="a" />
       </div>
-
-      {/* </div> */}
       <div className="info-area">
         <div className="title-area">
           <div className="title">{title}</div>
-          <div className="rating">평점: {vote_average}</div>
+          <div className="rating">평점: {vote_average.toFixed(1)}</div>
         </div>
-
         <div className="genres">
           장르:
           {genres.map((genre) => (

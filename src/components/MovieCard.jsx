@@ -46,22 +46,18 @@ const Card = styled.div`
   }
 `;
 
-export default function MovieCard({ movie }) {
-  console.log("MovieCard.jsx 실행");
+const MovieCard = React.forwardRef(({ movie }, ref) => {
   const { title, poster_path, vote_average } = movie;
-
-  // console.log("movie card moviee: ", movie);
   const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
-
   const navigate = useNavigate();
 
   return (
-    <>
-      <Card onClick={() => navigate(`/detail/${movie.id}`)}>
-        <img src={imgUrl} alt="a" />
-        <div className="title">{title}</div>
-        <div className="rating">평점: {vote_average}</div>
-      </Card>
-    </>
+    <Card ref={ref} onClick={() => navigate(`/detail/${movie.id}`)}>
+      <img src={imgUrl} alt={title} />
+      <div className="title">{title}</div>
+      <div className="rating">평점: {vote_average}</div>
+    </Card>
   );
-}
+});
+
+export default MovieCard;

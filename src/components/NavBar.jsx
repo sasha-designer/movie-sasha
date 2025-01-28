@@ -5,6 +5,7 @@ import { useDebounce } from "../hooks/useDebounce";
 import useSearchMovies from "../hooks/useSearchMovies";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { supabase } from "../pages/auth/supabseClient";
 
 const Header = styled.nav`
   width: 100vw;
@@ -39,9 +40,34 @@ export default function NavBar({ theme, setTheme }) {
   const [search, setSearch] = useState("");
   const debounceSearch = useDebounce(search);
 
+  const [user, setUser] = useState(null);
+
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
+
+  useEffect(() => {
+    // 로그인 상태 확인
+    const getSession = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      setUser(session?.user ?? null);
+      console.log("session: ", session);
+    };
+
+    getSession();
+
+    // 로그인 상태 변경 시 업데이트
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+    return () => {
+      subscription?.unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     if (debounceSearch) {
@@ -63,22 +89,48 @@ export default function NavBar({ theme, setTheme }) {
     console.log("theme: ", theme);
   };
 
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+    navigate("/");
+    alert("로그아웃되었습니다.");
+  };
+
+  //구글로그아웃
+  // async function signOut() {
+  //   const { error } = await supabase.auth.signOut();
+  // }
+
   return (
     <>
       <Header>
         <Link to="/">
           <span>Movie</span>
         </Link>
-        <input
-          type="text"
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
-        />
-        <button onClick={toggleTheme}>
-          Switch to {theme === "light" ? "Dark" : "Light"} Mode
+        <input type="text" onChange={handleChange} onKeyDown={handleKeyPress} />
+        <button onClick={toggleTheme} style={{ background: "none" }}>
+          {theme === "light" ? "🌞" : "💡"}
+          {/* 💡 */}
         </button>
-        <button onClick={() => navigate("login")}>로그인</button>
-        <button onClick={() => navigate("sign-up")}>회원가입</button>
+
+        {user ? (
+          <>
+            <img
+              src={user.user_metadata.avatar_url}
+              alt="User Avatar"
+              style={{ width: "30px", height: "30px", borderRadius: "50%" }}
+            />
+            <span>{user.email}</span>
+            {/* <span>{user.user_metadata.name}</span> */}
+
+            <button onClick={handleLogout}>Logout</button>
+          </>
+        ) : (
+          <>
+            <button onClick={() => navigate("login")}>Login</button>
+            <button onClick={() => navigate("sign-up")}>Sign Up</button>
+          </>
+        )}
       </Header>
     </>
   );
